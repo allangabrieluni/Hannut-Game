@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/criacao_personagem.css">
+  <link rel="stylesheet" href="styles/cards.css">
+</head>
+<body>
+  <!-- Pagina inicial -->
+  <div id="main_screen" class="screen active">
+    <div id="main_buttons"> <!--Eu, allan, adicionei essa div para não alterar o funcionamento do js-->
+    <button id="button_jogar" onclick="nextPage('criacao_personagem')">Jogar</button>
+    <button id="button_creditos" onclick="showCreditos()">Créditos</button>
+    <button id="button_sair" onclick="sair()">Sair</button>
+    </div>
+  </div>
+  <!-- Pagina de criacão de personagem -->
+  <div id="criacao_personagem" class="screen">
+    <div id="viwer_fotos">
+    <button id="direita">D</button>
+    <img src="null" id="fotos_perfil">
+    <button id="esquerda">E</button>
+    </div>
+    <div id="input_dados">
+    <input id="nome" type="text">
+    <button type="send" id="button_nome" onclick="nextPage('instrucoes_page')">Ok</button>
+    </div>
+  </div>
+  <!-- Pagina de instrução -->
+  <div id="instrucoes_page" class="screen">
+    <div id="cards">
+    <img src="instrucao1" id="instrucao">
+    <img src="instrucao2" id="instrucao">
+    <img src="instrucao3" id="instrucao">
+    </div>
+    <div id="button_cards">
+    <button id="ok_instrucoes" onclick="nextPage('nivel_plastico')"></button>
+    </div>
+  </div>
+  <!-- Pagina jogavel:PLASTICO -->
+  <div id="nivel_plastico" class="screen nivel">
+    <div id="infos">
+      <iframe src="info_platico.html" id="info_plastico" class="infos"></iframe>
+    </div>
+    <img id="1" src="NULL">
+    <img id="2" src="NULL">
+    <div id="lixeiras"></div>
+  </div>
+  <!-- Pagina de créditos -->
+  <div id="creditos_screen" class="screen">
+    <iframe src="creditos.html" id="creditos_iframe" class="infos"></iframe>
+    <button id="voltar" onclick="nextPage('main_screen')">Voltar</button>
+  </div>
+  <script src="scripts/jogo.js"></script>
+</body>
+</html>
